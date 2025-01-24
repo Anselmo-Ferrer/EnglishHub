@@ -6,16 +6,17 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider'
 
 export default function Translator() {
+  const [flag, setFlag] = useState(false)
 
   return (
     <div className="w-full h-[29%] bg-[#2C2C2C] rounded-xl">
 
       <div className='w-full h-[20%] flex items-center justify-between'>
         <Box sx={{ p: 2, border: '0.8px solid white', borderRadius: '10px', width: '40%', height: '100%', display: 'flex', alignItems: 'center',}}>
-          <span>Portugues</span>
+          <span>{flag ? 'Portuguese' : 'English' }</span>
         </Box>
         <div className='flex items-center gap-2 w-[20%] justify-center'>
-          <IconButton color="light" sx={{ height: '35px', width: '35px', color: '#0DA37F', '&:hover': { color: '#0BBF8C'} }} >
+          <IconButton onClick={() => setFlag(!flag)} color="light" sx={{ height: '35px', width: '35px', color: '#0DA37F', '&:hover': { color: '#0BBF8C'} }} >
             <ArrowRightLeft />
           </IconButton>
           <IconButton color="light" sx={{ height: '35px', width: '35px', color: '#0DA37F', '&:hover': { color: '#0BBF8C'} }}>
@@ -23,7 +24,7 @@ export default function Translator() {
           </IconButton>
         </div>
         <Box sx={{ p: 2, border: '0.8px solid white', borderRadius: '10px', width: '40%', height: '100%', display: 'flex', alignItems: 'center',}}>
-          <span>Ingles</span>
+        <span>{flag ? 'English' : 'Portuguese' }</span>
         </Box>
       </div>
 
